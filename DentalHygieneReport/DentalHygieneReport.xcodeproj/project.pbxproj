@@ -40,7 +40,7 @@
 		5F70AF5884C406CFB0232C1A /* Pods-DentalHygieneReportTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalHygieneReportTests.release.xcconfig"; path = "Target Support Files/Pods-DentalHygieneReportTests/Pods-DentalHygieneReportTests.release.xcconfig"; sourceTree = "<group>"; };
 		73517210D00A5833595BB0E0 /* Pods_DentalHygieneReport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DentalHygieneReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D8BED5240DC14C0018CC88 /* DayAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayAxisValueFormatter.swift; sourceTree = "<group>"; };
-		82EBB0A2240C0A9400A426FA /* DentalHygieneReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalHygieneReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82EBB0A2240C0A9400A426FA /* DentalHygiene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalHygiene.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EBB0A5240C0A9400A426FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82EBB0A7240C0A9400A426FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		82EBB0AC240C0A9400A426FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		82EBB0A3240C0A9400A426FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82EBB0A2240C0A9400A426FA /* DentalHygieneReport.app */,
+				82EBB0A2240C0A9400A426FA /* DentalHygiene.app */,
 				82EBB0B8240C0A9600A426FA /* DentalHygieneReportTests.xctest */,
 			);
 			name = Products;
@@ -201,7 +201,7 @@
 			);
 			name = DentalHygieneReport;
 			productName = DentalHygieneReport;
-			productReference = 82EBB0A2240C0A9400A426FA /* DentalHygieneReport.app */;
+			productReference = 82EBB0A2240C0A9400A426FA /* DentalHygiene.app */;
 			productType = "com.apple.product-type.application";
 		};
 		82EBB0B7240C0A9600A426FA /* DentalHygieneReportTests */ = {
@@ -527,7 +527,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rune-labs.DentalHygieneReport";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DentalHygiene;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -546,7 +546,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rune-labs.DentalHygieneReport";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DentalHygiene;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
