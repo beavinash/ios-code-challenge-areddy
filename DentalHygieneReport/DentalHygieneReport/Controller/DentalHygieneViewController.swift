@@ -9,20 +9,38 @@
 import UIKit
 
 class DentalHygieneViewController: UIViewController {
+    
+    var dentalHygieneResponse = [DentalHygiene]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        DentalHygieneAPI.requestMoreDentalHygiene(indexPageNumber: "1", completionHandler: handleResponse)
+        let task = URLSession.shared.dataTask(with: DentalHygieneAPI.Endpoint.moreDentalHygieneCollection("1").url) { (data, response, error) in
+            
+            guard let data = data else {
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                self.dentalHygieneResponse = try decoder.decode([DentalHygiene].self, from: data)
+                print(self.dentalHygieneResponse[4].numberOfPeople)
+            } catch {
+                print(error)
+            }
+            
+        }
+        task.resume()
     }
     
-    func handleResponse(value: [DentalHygiene]?, error: Error?) {
-        guard let value = value else {
-            return
-        }
+    @IBAction func navigationOfPage(_ sender: UIButton) {
         
-        print(value)
+    }
+    
+    @IBAction func enterCustomPageSize(_ sender: UIButton) {
+        
     }
     
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r8B-rG-yMh">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,9 +12,59 @@
             <objects>
                 <viewController id="w93-Qa-kgv" customClass="DentalHygieneViewController" customModule="DentalHygieneReport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cS6-um-Abk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yim-0w-KN8" userLabel="Page Navigation Stack View">
+                                <rect key="frame" x="299" y="160" width="56" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAS-j7-hGc" userLabel="LeftButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="18" height="30"/>
+                                        <state key="normal" image="arrow-left"/>
+                                        <connections>
+                                            <action selector="navigationOfPage:" destination="w93-Qa-kgv" eventType="touchUpInside" id="D8i-SE-TVM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcQ-Sy-u5Y" userLabel="RightButton">
+                                        <rect key="frame" x="38" y="0.0" width="18" height="30"/>
+                                        <state key="normal" image="arrow-right"/>
+                                        <connections>
+                                            <action selector="navigationOfPage:" destination="w93-Qa-kgv" eventType="touchUpInside" id="gzr-ix-6Gj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xdI-KW-3u9"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xo3-E3-Dy8">
+                                <rect key="frame" x="20" y="160" width="165" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSZ-ij-NzC">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="30"/>
+                                        <state key="normal" title="Enter Custom Page Size"/>
+                                        <connections>
+                                            <action selector="enterCustomPageSize:" destination="w93-Qa-kgv" eventType="touchUpInside" id="MVq-mk-zL1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Te1-Pt-79d" userLabel="LineChart">
+                                <rect key="frame" x="20" y="206" width="335" height="400"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Te1-Pt-79d" firstAttribute="top" secondItem="Yim-0w-KN8" secondAttribute="bottom" constant="16" id="7YL-vf-zT8"/>
+                            <constraint firstItem="hn4-EG-t7s" firstAttribute="trailing" secondItem="Te1-Pt-79d" secondAttribute="trailing" constant="20" id="FLz-a0-4fv"/>
+                            <constraint firstItem="Yim-0w-KN8" firstAttribute="top" secondItem="hn4-EG-t7s" secondAttribute="top" constant="20" id="M3z-uw-XdL"/>
+                            <constraint firstItem="hn4-EG-t7s" firstAttribute="trailing" secondItem="Yim-0w-KN8" secondAttribute="trailing" constant="20" id="Rvl-eD-GjG"/>
+                            <constraint firstItem="Xo3-E3-Dy8" firstAttribute="leading" secondItem="hn4-EG-t7s" secondAttribute="leading" constant="20" id="m9R-pv-imk"/>
+                            <constraint firstItem="Te1-Pt-79d" firstAttribute="leading" secondItem="hn4-EG-t7s" secondAttribute="leading" constant="20" id="nNd-Yd-ihD"/>
+                            <constraint firstItem="Te1-Pt-79d" firstAttribute="centerY" secondItem="cS6-um-Abk" secondAttribute="centerY" id="nnW-It-HNE"/>
+                            <constraint firstItem="Xo3-E3-Dy8" firstAttribute="top" secondItem="hn4-EG-t7s" secondAttribute="top" constant="20" id="pBo-iR-SXO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hn4-EG-t7s"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dental Hygiene" id="5JM-MQ-a50"/>
@@ -29,7 +79,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r8B-rG-yMh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="AKA-Ym-JQn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -42,4 +92,8 @@
             <point key="canvasLocation" x="47.826086956521742" y="578.57142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow-left" width="18" height="14"/>
+        <image name="arrow-right" width="18" height="14"/>
+    </resources>
 </document>
