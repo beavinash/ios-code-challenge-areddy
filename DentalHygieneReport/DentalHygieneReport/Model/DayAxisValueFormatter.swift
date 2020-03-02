@@ -13,6 +13,7 @@ public class DayAxisValueFormatter: NSObject, IAxisValueFormatter {
     
     weak var chart: BarLineChartViewBase?
     
+    // To format all the API response data with month by month timestamp
     let months = ["Jan", "Feb", "Mar",
                   "Apr", "May", "Jun",
                   "Jul", "Aug", "Sep",
@@ -26,6 +27,7 @@ public class DayAxisValueFormatter: NSObject, IAxisValueFormatter {
     }
     
     public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        
         let date = Date(timeIntervalSince1970: TimeInterval(Double(xData[Int(value)])))
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date)

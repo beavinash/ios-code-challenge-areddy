@@ -11,38 +11,40 @@ import Charts
 
 class DentalHygieneViewController: UIViewController, ChartViewDelegate {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var labelPageNumber: UILabel!
     
+    // MARK: - Properties
     var dentalData: [DentalHygiene] = []
     var dataIndex: Int = 1
-    var dataUnit = 10000
+    var dataUnitRepresentation = 10000
     var pageIndex = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Inititalization of LineChart and DentalHygieneAPI call from model
         lineChartView.delegate = self
         DentalHygieneAPI.requestMoreDentalHygiene(indexPageNumber: "\(dataIndex)", completionHandler: handleResponse)
     }
     
+    // MARK: - IBAction methods to navigate and show different charts based on user input
     @IBAction func onSegmentUnit(_ sender: UISegmentedControl) {
         if (sender.selectedSegmentIndex == 0) {
-            dataUnit = 10000
+            dataUnitRepresentation = 10000
             pageIndex = 0
         } else if (sender.selectedSegmentIndex == 1) {
-            dataUnit = 7500
+            dataUnitRepresentation = 7500
             pageIndex = 0
         } else {
-            dataUnit = 5000
+            dataUnitRepresentation = 5000
             pageIndex = 0
         }
         handleUIUpdate()
     }
-    
     
     @IBAction func onPreviousButtonPress(_ sender: Any) {
         if (pageIndex > 0) {
@@ -52,13 +54,13 @@ class DentalHygieneViewController: UIViewController, ChartViewDelegate {
     }
     
     @IBAction func onNextButtonPress(_ sender: Any) {
-        if (Double(pageIndex) < Double(dentalData.count) / Double(dataUnit)) {
+        if (Double(pageIndex) < Double(dentalData.count) / Double(dataUnitRepresentation)) {
             pageIndex += 1
             handleUIUpdate()
         }
     }
     
-    
+    // Method to compare date values to display on charts
     func compareDate(date1: Date, date2: Date) -> Bool {
         let calendar = Calendar.current
         let year1 = calendar.component(.year, from: date1)
@@ -70,6 +72,7 @@ class DentalHygieneViewController: UIViewController, ChartViewDelegate {
         return (year1 == year2) && (month1 == month2) && (day1 == day2)
     }
     
+    // MARK: - Methods to handle api response and show values on charts
     func handleResponse(value: [DentalHygiene]?, error: Error?) {
         if (value != nil) {
             dentalData.append(contentsOf: value!)
@@ -80,20 +83,22 @@ class DentalHygieneViewController: UIViewController, ChartViewDelegate {
                 self.handleUIUpdate()
             }
         }
-        print("Testing \(dataIndex)")
     }
     
     func handleUIUpdate() {
-        if (dentalData.count > (pageIndex + 1) * dataUnit) {
+        
+        if (dentalData.count > (pageIndex + 1) * dataUnitRepresentation) {
             nextButton.isEnabled = true
         } else {
             nextButton.isEnabled = false
         }
+        
         if (pageIndex > 0) {
             previousButton.isEnabled = true
         } else {
             previousButton.isEnabled = false
         }
+        
         labelPageNumber.text = "\(pageIndex + 1)"
         
         lineChartView.noDataText = "No data for the chart"
@@ -102,36 +107,33 @@ class DentalHygieneViewController: UIViewController, ChartViewDelegate {
         var dataEntries: [ChartDataEntry] = []
         var xData: [Int] = []
         var yData: [DentalHygiene] = []
-        let maxCount = dentalData.count > (pageIndex + 1) * dataUnit ? dataUnit : dentalData.count - pageIndex * dataUnit
+        let maxCount = dentalData.count > (pageIndex + 1) * dataUnitRepresentation ? dataUnitRepresentation : dentalData.count - pageIndex * dataUnitRepresentation
         
-        for i in 0..<maxCount {
-            let date = Date(timeIntervalSince1970: TimeInterval(Double(dentalData[i + pageIndex * dataUnit].timestamp)))
+        for index in 0..<maxCount {
+            let date = Date(timeIntervalSince1970: TimeInterval(Double(dentalData[index + pageIndex * dataUnitRepresentation].timestamp)))
+            
             if (yData.isEmpty || !compareDate(date1: date, date2: Date(timeIntervalSince1970: TimeInterval(Double(yData.last!.timestamp))))) {
-                yData.append(dentalData[i + pageIndex * dataUnit])
+                yData.append(dentalData[index + pageIndex * dataUnitRepresentation])
             } else {
-                yData[yData.count - 1].numberOfPeople = yData[yData.count - 1].numberOfPeople + dentalData[i + pageIndex * dataUnit].numberOfPeople
+                yData[yData.count - 1].numberOfPeople = yData[yData.count - 1].numberOfPeople + dentalData[index + pageIndex * dataUnitRepresentation].numberOfPeople
             }
         }
         
-        for i in 0..<yData.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: Double(yData[i].numberOfPeople))
+        for index in 0..<yData.count {
+            let dataEntry = ChartDataEntry(x: Double(index), y: Double(yData[index].numberOfPeople))
             dataEntries.append(dataEntry)
-            xData.append(yData[i].timestamp)
+            xData.append(yData[index].timestamp)
         }
         
         let chartDataSet = LineChartDataSet(entries: dataEntries)
         let chartData = LineChartData()
-        chartData.addDataSet(chartDataSet)
-        chartData.setDrawValues(true)
-        chartDataSet.colors = [UIColor.systemPink]
-        chartDataSet.setCircleColor(UIColor.systemPink)
-        chartDataSet.circleHoleColor = UIColor.systemPink
-        chartDataSet.circleRadius = 4.0
-        chartDataSet.mode = .cubicBezier
-        chartDataSet.cubicIntensity = 0.2
-        chartDataSet.drawCirclesEnabled = true
-        chartDataSet.drawValuesEnabled = false
         
+        formatCharYAxis(chartData, chartDataSet)
+        
+        formatChartXAxis(xData, chartData)
+    }
+    
+    fileprivate func formatChartXAxis(_ xData: [Int], _ chartData: LineChartData) {
         let formatter = DayAxisValueFormatter(chart: lineChartView, xData: xData)
         let xaxis: XAxis = XAxis()
         xaxis.valueFormatter = formatter
@@ -146,6 +148,19 @@ class DentalHygieneViewController: UIViewController, ChartViewDelegate {
         lineChartView.leftAxis.drawLabelsEnabled = true
         lineChartView.leftAxis.spaceBottom = 0
         lineChartView.data = chartData
+    }
+    
+    fileprivate func formatCharYAxis(_ chartData: LineChartData, _ chartDataSet: LineChartDataSet) {
+        chartData.addDataSet(chartDataSet)
+        chartData.setDrawValues(true)
+        chartDataSet.colors = [UIColor.systemPink]
+        chartDataSet.setCircleColor(UIColor.systemPink)
+        chartDataSet.circleHoleColor = UIColor.systemPink
+        chartDataSet.circleRadius = 4.0
+        chartDataSet.mode = .cubicBezier
+        chartDataSet.cubicIntensity = 0.2
+        chartDataSet.drawCirclesEnabled = true
+        chartDataSet.drawValuesEnabled = false
     }
 
 }
