@@ -14,6 +14,15 @@ class DentalHygieneViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        DentalHygieneAPI.requestMoreDentalHygiene(indexPageNumber: "1", completionHandler: handleResponse)
+    }
+    
+    func handleResponse(value: [DentalHygiene]?, error: Error?) {
+        guard let value = value else {
+            return
+        }
+        
+        print(value)
     }
     
 

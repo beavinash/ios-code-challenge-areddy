@@ -17,6 +17,8 @@
 		82EBB0CC240C0BC300A426FA /* 2.json in Resources */ = {isa = PBXBuildFile; fileRef = 82EBB0C9240C0BC200A426FA /* 2.json */; };
 		82EBB0CD240C0BC300A426FA /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = 82EBB0CA240C0BC200A426FA /* 3.json */; };
 		82EBB0D0240C0D3B00A426FA /* DentalHygieneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0CF240C0D3B00A426FA /* DentalHygieneViewController.swift */; };
+		82EBB0D4240C927700A426FA /* DentalHygiene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0D3240C927700A426FA /* DentalHygiene.swift */; };
+		82EBB0D6240C96C100A426FA /* DentalHygieneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0D5240C96C100A426FA /* DentalHygieneAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		82EBB0C9240C0BC200A426FA /* 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 2.json; sourceTree = "<group>"; };
 		82EBB0CA240C0BC200A426FA /* 3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 3.json; sourceTree = "<group>"; };
 		82EBB0CF240C0D3B00A426FA /* DentalHygieneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalHygieneViewController.swift; sourceTree = "<group>"; };
+		82EBB0D3240C927700A426FA /* DentalHygiene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalHygiene.swift; sourceTree = "<group>"; };
+		82EBB0D5240C96C100A426FA /* DentalHygieneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalHygieneAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 		82EBB0D1240C0F5800A426FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				82EBB0D3240C927700A426FA /* DentalHygiene.swift */,
+				82EBB0D5240C96C100A426FA /* DentalHygieneAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,9 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82EBB0D6240C96C100A426FA /* DentalHygieneAPI.swift in Sources */,
 				82EBB0D0240C0D3B00A426FA /* DentalHygieneViewController.swift in Sources */,
 				82EBB0A6240C0A9400A426FA /* AppDelegate.swift in Sources */,
 				82EBB0A8240C0A9400A426FA /* SceneDelegate.swift in Sources */,
+				82EBB0D4240C927700A426FA /* DentalHygiene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
