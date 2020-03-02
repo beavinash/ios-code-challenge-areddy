@@ -10,7 +10,7 @@ import Foundation
 
 struct DentalHygiene: Codable {
     let timestamp: Int
-    let numberOfPeople: Int
+    var numberOfPeople: Int
     
     enum CodingKeys: String, CodingKey {
         case timestamp = "t"

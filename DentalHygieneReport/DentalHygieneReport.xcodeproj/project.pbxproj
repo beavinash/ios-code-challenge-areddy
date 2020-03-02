@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		68FDC382163BBD0E29A4BDC0 /* Pods_DentalHygieneReportTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF696027A46FD0655185285F /* Pods_DentalHygieneReportTests.framework */; };
+		82D8BED6240DC14C0018CC88 /* DayAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D8BED5240DC14C0018CC88 /* DayAxisValueFormatter.swift */; };
 		82EBB0A6240C0A9400A426FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0A5240C0A9400A426FA /* AppDelegate.swift */; };
 		82EBB0A8240C0A9400A426FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0A7240C0A9400A426FA /* SceneDelegate.swift */; };
 		82EBB0AD240C0A9400A426FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EBB0AB240C0A9400A426FA /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		5EBBE085765D846C5B5A5C9E /* Pods-DentalHygieneReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalHygieneReport.debug.xcconfig"; path = "Target Support Files/Pods-DentalHygieneReport/Pods-DentalHygieneReport.debug.xcconfig"; sourceTree = "<group>"; };
 		5F70AF5884C406CFB0232C1A /* Pods-DentalHygieneReportTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalHygieneReportTests.release.xcconfig"; path = "Target Support Files/Pods-DentalHygieneReportTests/Pods-DentalHygieneReportTests.release.xcconfig"; sourceTree = "<group>"; };
 		73517210D00A5833595BB0E0 /* Pods_DentalHygieneReport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DentalHygieneReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82D8BED5240DC14C0018CC88 /* DayAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayAxisValueFormatter.swift; sourceTree = "<group>"; };
 		82EBB0A2240C0A9400A426FA /* DentalHygieneReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalHygieneReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EBB0A5240C0A9400A426FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82EBB0A7240C0A9400A426FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,9 +117,6 @@
 				82EBB0D1240C0F5800A426FA /* Model */,
 				82EBB0D2240C0F6E00A426FA /* View */,
 				82EBB0CE240C0C9300A426FA /* Controller */,
-				82EBB0AB240C0A9400A426FA /* Main.storyboard */,
-				82EBB0AE240C0A9600A426FA /* Assets.xcassets */,
-				82EBB0B0240C0A9600A426FA /* LaunchScreen.storyboard */,
 				82EBB0B3240C0A9600A426FA /* Info.plist */,
 				82EBB0C7240C0BC200A426FA /* api */,
 			);
@@ -157,6 +156,7 @@
 			children = (
 				82EBB0D3240C927700A426FA /* DentalHygiene.swift */,
 				82EBB0D5240C96C100A426FA /* DentalHygieneAPI.swift */,
+				82D8BED5240DC14C0018CC88 /* DayAxisValueFormatter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +164,9 @@
 		82EBB0D2240C0F6E00A426FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				82EBB0AB240C0A9400A426FA /* Main.storyboard */,
+				82EBB0AE240C0A9600A426FA /* Assets.xcassets */,
+				82EBB0B0240C0A9600A426FA /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,7 +179,6 @@
 				49148BB67EEAF0D5891FF615 /* Pods-DentalHygieneReportTests.debug.xcconfig */,
 				5F70AF5884C406CFB0232C1A /* Pods-DentalHygieneReportTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -355,6 +357,7 @@
 				82EBB0D0240C0D3B00A426FA /* DentalHygieneViewController.swift in Sources */,
 				82EBB0A6240C0A9400A426FA /* AppDelegate.swift in Sources */,
 				82EBB0A8240C0A9400A426FA /* SceneDelegate.swift in Sources */,
+				82D8BED6240DC14C0018CC88 /* DayAxisValueFormatter.swift in Sources */,
 				82EBB0D4240C927700A426FA /* DentalHygiene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
