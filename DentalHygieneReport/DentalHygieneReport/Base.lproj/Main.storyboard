@@ -11,61 +11,72 @@
         <scene sceneID="WfG-9M-pct">
             <objects>
                 <viewController id="w93-Qa-kgv" customClass="DentalHygieneViewController" customModule="DentalHygieneReport" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cS6-um-Abk">
+                    <view key="view" contentMode="scaleToFill" id="o9B-aR-nP4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yim-0w-KN8" userLabel="Page Navigation Stack View">
-                                <rect key="frame" x="299" y="160" width="56" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGi-T0-xNL" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="220" width="335" height="578"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gn-eY-rHD">
+                                <rect key="frame" x="20" y="160" width="335" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAS-j7-hGc" userLabel="LeftButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="18" height="30"/>
-                                        <state key="normal" image="arrow-left"/>
-                                        <connections>
-                                            <action selector="navigationOfPage:" destination="w93-Qa-kgv" eventType="touchUpInside" id="D8i-SE-TVM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcQ-Sy-u5Y" userLabel="RightButton">
-                                        <rect key="frame" x="38" y="0.0" width="18" height="30"/>
-                                        <state key="normal" image="arrow-right"/>
-                                        <connections>
-                                            <action selector="navigationOfPage:" destination="w93-Qa-kgv" eventType="touchUpInside" id="gzr-ix-6Gj"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpc-rC-loo">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hQE-Ly-tMb">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="51"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="OoN-8u-mLD"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="5000"/>
+                                                    <segment title="7500"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3R-6r-QZ3">
+                                                <rect key="frame" x="120" y="0.0" width="115" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFK-nm-NQy">
+                                                <rect key="frame" x="235" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="mXY-L6-PIp"/>
+                                                </constraints>
+                                                <state key="normal" image="back"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ged-eA-5FN">
+                                                <rect key="frame" x="285" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="cRj-TD-k1K"/>
+                                                </constraints>
+                                                <state key="normal" image="forward"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="xdI-KW-3u9"/>
+                                    <constraint firstAttribute="trailing" secondItem="hpc-rC-loo" secondAttribute="trailing" id="6rb-kf-QTT"/>
+                                    <constraint firstItem="hpc-rC-loo" firstAttribute="leading" secondItem="7Gn-eY-rHD" secondAttribute="leading" id="RYl-pR-kl5"/>
+                                    <constraint firstItem="hpc-rC-loo" firstAttribute="top" secondItem="7Gn-eY-rHD" secondAttribute="top" id="SzB-4o-KQN"/>
+                                    <constraint firstAttribute="height" constant="50" id="UP3-TC-bg7"/>
+                                    <constraint firstAttribute="bottom" secondItem="hpc-rC-loo" secondAttribute="bottom" id="WLP-t5-Gz8"/>
                                 </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xo3-E3-Dy8">
-                                <rect key="frame" x="20" y="160" width="165" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSZ-ij-NzC">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="30"/>
-                                        <state key="normal" title="Enter Custom Page Size"/>
-                                        <connections>
-                                            <action selector="enterCustomPageSize:" destination="w93-Qa-kgv" eventType="touchUpInside" id="MVq-mk-zL1"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Te1-Pt-79d" userLabel="LineChart">
-                                <rect key="frame" x="20" y="206" width="335" height="400"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Te1-Pt-79d" firstAttribute="top" secondItem="Yim-0w-KN8" secondAttribute="bottom" constant="16" id="7YL-vf-zT8"/>
-                            <constraint firstItem="hn4-EG-t7s" firstAttribute="trailing" secondItem="Te1-Pt-79d" secondAttribute="trailing" constant="20" id="FLz-a0-4fv"/>
-                            <constraint firstItem="Yim-0w-KN8" firstAttribute="top" secondItem="hn4-EG-t7s" secondAttribute="top" constant="20" id="M3z-uw-XdL"/>
-                            <constraint firstItem="hn4-EG-t7s" firstAttribute="trailing" secondItem="Yim-0w-KN8" secondAttribute="trailing" constant="20" id="Rvl-eD-GjG"/>
-                            <constraint firstItem="Xo3-E3-Dy8" firstAttribute="leading" secondItem="hn4-EG-t7s" secondAttribute="leading" constant="20" id="m9R-pv-imk"/>
-                            <constraint firstItem="Te1-Pt-79d" firstAttribute="leading" secondItem="hn4-EG-t7s" secondAttribute="leading" constant="20" id="nNd-Yd-ihD"/>
-                            <constraint firstItem="Te1-Pt-79d" firstAttribute="centerY" secondItem="cS6-um-Abk" secondAttribute="centerY" id="nnW-It-HNE"/>
-                            <constraint firstItem="Xo3-E3-Dy8" firstAttribute="top" secondItem="hn4-EG-t7s" secondAttribute="top" constant="20" id="pBo-iR-SXO"/>
+                            <constraint firstItem="7Gn-eY-rHD" firstAttribute="top" secondItem="9lI-CH-XDu" secondAttribute="top" constant="20" id="3uh-kh-SSW"/>
+                            <constraint firstItem="cGi-T0-xNL" firstAttribute="bottom" secondItem="9lI-CH-XDu" secondAttribute="bottom" constant="20" id="4Hm-Kf-iSf"/>
+                            <constraint firstItem="7Gn-eY-rHD" firstAttribute="leading" secondItem="9lI-CH-XDu" secondAttribute="leading" constant="20" id="Fkh-P2-fPR"/>
+                            <constraint firstItem="cGi-T0-xNL" firstAttribute="leading" secondItem="9lI-CH-XDu" secondAttribute="leading" constant="20" id="Ink-Z9-ZEL"/>
+                            <constraint firstItem="cGi-T0-xNL" firstAttribute="top" secondItem="7Gn-eY-rHD" secondAttribute="bottom" constant="10" id="Mxa-7m-Ugh"/>
+                            <constraint firstItem="7Gn-eY-rHD" firstAttribute="trailing" secondItem="9lI-CH-XDu" secondAttribute="trailing" constant="-20" id="TOX-mc-8Hu"/>
+                            <constraint firstItem="cGi-T0-xNL" firstAttribute="trailing" secondItem="9lI-CH-XDu" secondAttribute="trailing" constant="-20" id="W1T-5J-Eyc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="hn4-EG-t7s"/>
+                        <viewLayoutGuide key="safeArea" id="9lI-CH-XDu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dental Hygiene" id="5JM-MQ-a50"/>
                 </viewController>
@@ -93,7 +104,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow-left" width="18" height="14"/>
-        <image name="arrow-right" width="18" height="14"/>
+        <image name="back" width="18" height="14"/>
+        <image name="forward" width="18" height="14"/>
     </resources>
 </document>
