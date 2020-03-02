@@ -36,13 +36,11 @@ class DentalHygieneAPI {
             
             do {
                 dentalHygieneResponse = try decoder.decode([DentalHygiene].self, from: data)
-                print(dentalHygieneResponse[0].timestamp)
+                completionHandler(dentalHygieneResponse, nil)
             } catch {
                 print(error)
+                completionHandler(nil, error)
             }
-            
-            completionHandler(dentalHygieneResponse, nil)
-            
         }
         task.resume()
     }

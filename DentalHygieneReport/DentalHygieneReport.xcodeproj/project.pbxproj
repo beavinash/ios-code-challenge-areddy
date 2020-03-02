@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68FDC382163BBD0E29A4BDC0 /* Pods_DentalHygieneReportTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF696027A46FD0655185285F /* Pods_DentalHygieneReportTests.framework */; };
 		82EBB0A6240C0A9400A426FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0A5240C0A9400A426FA /* AppDelegate.swift */; };
 		82EBB0A8240C0A9400A426FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0A7240C0A9400A426FA /* SceneDelegate.swift */; };
 		82EBB0AD240C0A9400A426FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EBB0AB240C0A9400A426FA /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		82EBB0D0240C0D3B00A426FA /* DentalHygieneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0CF240C0D3B00A426FA /* DentalHygieneViewController.swift */; };
 		82EBB0D4240C927700A426FA /* DentalHygiene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0D3240C927700A426FA /* DentalHygiene.swift */; };
 		82EBB0D6240C96C100A426FA /* DentalHygieneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBB0D5240C96C100A426FA /* DentalHygieneAPI.swift */; };
+		D599DE04AB47DD4BCEF8D4E1 /* Pods_DentalHygieneReport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73517210D00A5833595BB0E0 /* Pods_DentalHygieneReport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49148BB67EEAF0D5891FF615 /* Pods-DentalHygieneReportTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalHygieneReportTests.debug.xcconfig"; path = "Target Support Files/Pods-DentalHygieneReportTests/Pods-DentalHygieneReportTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5EBBE085765D846C5B5A5C9E /* Pods-DentalHygieneReport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalHygieneReport.debug.xcconfig"; path = "Target Support Files/Pods-DentalHygieneReport/Pods-DentalHygieneReport.debug.xcconfig"; sourceTree = "<group>"; };
+		5F70AF5884C406CFB0232C1A /* Pods-DentalHygieneReportTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalHygieneReportTests.release.xcconfig"; path = "Target Support Files/Pods-DentalHygieneReportTests/Pods-DentalHygieneReportTests.release.xcconfig"; sourceTree = "<group>"; };
+		73517210D00A5833595BB0E0 /* Pods_DentalHygieneReport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DentalHygieneReport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EBB0A2240C0A9400A426FA /* DentalHygieneReport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalHygieneReport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EBB0A5240C0A9400A426FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82EBB0A7240C0A9400A426FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +54,8 @@
 		82EBB0CF240C0D3B00A426FA /* DentalHygieneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalHygieneViewController.swift; sourceTree = "<group>"; };
 		82EBB0D3240C927700A426FA /* DentalHygiene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalHygiene.swift; sourceTree = "<group>"; };
 		82EBB0D5240C96C100A426FA /* DentalHygieneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalHygieneAPI.swift; sourceTree = "<group>"; };
+		BF696027A46FD0655185285F /* Pods_DentalHygieneReportTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DentalHygieneReportTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C284ABD1698FC6A2F6CDAC11 /* Pods-DentalHygieneReport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DentalHygieneReport.release.xcconfig"; path = "Target Support Files/Pods-DentalHygieneReport/Pods-DentalHygieneReport.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D599DE04AB47DD4BCEF8D4E1 /* Pods_DentalHygieneReport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,18 +71,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68FDC382163BBD0E29A4BDC0 /* Pods_DentalHygieneReportTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BD0014300F1FB493023C6D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73517210D00A5833595BB0E0 /* Pods_DentalHygieneReport.framework */,
+				BF696027A46FD0655185285F /* Pods_DentalHygieneReportTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		82EBB099240C0A9400A426FA = {
 			isa = PBXGroup;
 			children = (
 				82EBB0A4240C0A9400A426FA /* DentalHygieneReport */,
 				82EBB0BB240C0A9600A426FA /* DentalHygieneReportTests */,
 				82EBB0A3240C0A9400A426FA /* Products */,
+				BFA7F55959F70E4F232A5BF3 /* Pods */,
+				6BD0014300F1FB493023C6D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +168,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BFA7F55959F70E4F232A5BF3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EBBE085765D846C5B5A5C9E /* Pods-DentalHygieneReport.debug.xcconfig */,
+				C284ABD1698FC6A2F6CDAC11 /* Pods-DentalHygieneReport.release.xcconfig */,
+				49148BB67EEAF0D5891FF615 /* Pods-DentalHygieneReportTests.debug.xcconfig */,
+				5F70AF5884C406CFB0232C1A /* Pods-DentalHygieneReportTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82EBB0C1240C0A9600A426FA /* Build configuration list for PBXNativeTarget "DentalHygieneReport" */;
 			buildPhases = (
+				FC19C93F1150C1D62E7CBB51 /* [CP] Check Pods Manifest.lock */,
 				82EBB09E240C0A9400A426FA /* Sources */,
 				82EBB09F240C0A9400A426FA /* Frameworks */,
 				82EBB0A0240C0A9400A426FA /* Resources */,
+				4B1034B12B5356BCE259DF1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82EBB0C4240C0A9600A426FA /* Build configuration list for PBXNativeTarget "DentalHygieneReportTests" */;
 			buildPhases = (
+				D1C37EFCBAEFF164C5FFC733 /* [CP] Check Pods Manifest.lock */,
 				82EBB0B4240C0A9600A426FA /* Sources */,
 				82EBB0B5240C0A9600A426FA /* Frameworks */,
 				82EBB0B6240C0A9600A426FA /* Resources */,
@@ -245,6 +281,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4B1034B12B5356BCE259DF1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DentalHygieneReport/Pods-DentalHygieneReport-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DentalHygieneReport/Pods-DentalHygieneReport-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DentalHygieneReport/Pods-DentalHygieneReport-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1C37EFCBAEFF164C5FFC733 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DentalHygieneReportTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC19C93F1150C1D62E7CBB51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DentalHygieneReport-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		82EBB09E240C0A9400A426FA /* Sources */ = {
@@ -413,6 +513,7 @@
 		};
 		82EBB0C2240C0A9600A426FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EBBE085765D846C5B5A5C9E /* Pods-DentalHygieneReport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -431,6 +532,7 @@
 		};
 		82EBB0C3240C0A9600A426FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C284ABD1698FC6A2F6CDAC11 /* Pods-DentalHygieneReport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +551,7 @@
 		};
 		82EBB0C5240C0A9600A426FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49148BB67EEAF0D5891FF615 /* Pods-DentalHygieneReportTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +574,7 @@
 		};
 		82EBB0C6240C0A9600A426FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F70AF5884C406CFB0232C1A /* Pods-DentalHygieneReportTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
